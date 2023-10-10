@@ -1,10 +1,11 @@
 'use client'
-import React from 'react';
+import { useState } from 'react';
+import Link from 'next/link';
 import SpaceXLogo from './SpaceXLogo';
-import { Navbar, NavbarBrand, NavbarContent, NavbarItem, Link, NavbarMenuToggle, NavbarMenu, NavbarMenuItem } from '@nextui-org/react';
+import { Navbar, NavbarBrand, NavbarContent, NavbarItem, NavbarMenuToggle, NavbarMenu, NavbarMenuItem } from '@nextui-org/react';
 
 function Header() {
-  const [isMenuOpen, setIsMenuOpen] = React.useState(false);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const menuItems = [
     { label: 'Crew', link: '#' },
@@ -23,7 +24,9 @@ function Header() {
           className='sm:hidden'
         />
         <NavbarBrand>
-          <SpaceXLogo width={200} />
+          <Link href='/'>
+            <SpaceXLogo width={200} />
+          </Link>
         </NavbarBrand>
       </NavbarContent>
 
@@ -32,7 +35,6 @@ function Header() {
           <NavbarItem key={index}>
             <Link
               href={`${item.link}`}
-              color='foreground'
               className='uppercase decoration-blue-500 hover:underline hover:underline-offset-4'
             >
               {item.label}
@@ -44,7 +46,7 @@ function Header() {
       <NavbarMenu>
         {menuItems.map((item, index) =>
           <NavbarMenuItem key={index}>
-            <Link href={`${item.link}`} color='foreground' size='lg'>
+            <Link href={`${item.link}`} size='lg'>
               {item.label}
             </Link>
           </NavbarMenuItem>
