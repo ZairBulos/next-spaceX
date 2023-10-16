@@ -1,12 +1,11 @@
-import { useEffect, useState } from "react";
+import { useCallback, useState } from "react";
 import spacexService from "../services/spacex";
 
 export const useData = () => {
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(false);
-  const [component, setComponent] = useState(null);
 
-  const onFetch = async (endpoint) => {
+  const onFetch = useCallback(async (endpoint) => {
     try {
       setLoading(true);
 
@@ -25,25 +24,11 @@ export const useData = () => {
     } finally {
       setLoading(false);
     }
-  };
-
-  useEffect(() => {
-    if (!component) return;
-
-    const fetchData = async () => {
-      await onFetch(component);
-    };
-
-    fetchData();
-  }, [component]);
-
-  const onChangeComponent = (newComponent) => {
-    setComponent(newComponent);
-  };
+  }, []);
 
   return {
     data,
     loading,
-    onChangeComponent,
+    onFetch,
   };
 };
