@@ -1,18 +1,14 @@
 import React from "react";
-import { Card, CardFooter, Image, Button, Link } from "@nextui-org/react";
 import MotionCard from "./MotionCard";
+import { Card, CardFooter, Image, Button, Link } from "@nextui-org/react";
 
 function CrewCard({ member }) {
   return (
     <MotionCard>
-      <Card radius="lg" isFooterBlurred className="border-none h-96">
-        <Image
-          src={member.image}
-          alt={member.name}
-          className="w-full h-full object-cover"
-        />
+      <Card radius="lg" isFooterBlurred className="border-none h-72">
+        <Image src={member.image} alt={member.name} className="h-full w-full" />
         <CardFooter className="justify-between before:bg-white/10 border-white/20 border-1 overflow-hidden py-1 absolute before:rounded-xl rounded-large bottom-1 w-[calc(100%_-_8px)] shadow-small ml-1 z-10">
-          <p className="text-tiny text-white/80">{member.name}</p>
+          <p className="text-tiny font-semibold text-white/80">{member.name}</p>
           <Button
             as={Link}
             href={member.wikipedia}

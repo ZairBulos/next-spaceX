@@ -2,34 +2,23 @@
 import React, { useEffect } from "react";
 import { useData } from "@/hooks/useData";
 import Loader from "@/components/Loader";
-import CoreCard from "@/components/CoreCard";
+import CoreList from "@/components/List/CoreList";
 
-function CoresList() {
-  const { data, loading, onChangeComponent } = useData();
+function Cores() {
+  const { data, loading, onFetch } = useData();
 
   useEffect(() => {
-    onChangeComponent("cores");
-  }, [onChangeComponent]);
+    onFetch("cores");
+  }, []);
 
   return (
-    <main className="container mx-auto p-10">
-      <div className="text-center pb-10">
-        <h1 className="text-4xl md:text-5xl font-bold">Cores</h1>
-      </div>
-      {loading ? (
-        <Loader />
-      ) : (
-        <div
-          className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-4"
-          role="list"
-        > 
-          {data.map((item) => (
-            <CoreCard key={item.name} core={item} />
-          ))}
-        </div>
-      )}
+    <main>
+      <section className="container mx-auto p-10">
+        <h1 className="text-4xl font-bold text-center mb-10">Cores</h1>
+        {loading ? <Loader /> : <CoreList cores={data} />}
+      </section>
     </main>
   );
 }
 
-export default React.memo(CoresList);
+export default React.memo(Cores);
