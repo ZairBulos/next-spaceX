@@ -26,8 +26,8 @@ function Header() {
 
   return (
     <Navbar
-      onMenuOpenChange={setIsMenuOpen}
       position="static"
+      onMenuOpenChange={setIsMenuOpen}
       className="lg:py-4"
     >
       <NavbarContent>
@@ -42,12 +42,12 @@ function Header() {
         </NavbarBrand>
       </NavbarContent>
 
-      <NavbarContent className="hidden sm:flex gap-5" justify="end">
+      <NavbarContent className="hidden sm:flex gap-5">
         {menuItems.map((item, index) => (
           <NavbarItem key={index}>
             <Link
               href={`${item.link}`}
-              className="uppercase decoration-blue-500 hover:underline hover:underline-offset-4"
+              className="uppercase hover:underline underline-offset-8 decoration-sky-400"
             >
               {item.label}
             </Link>
