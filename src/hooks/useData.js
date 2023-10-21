@@ -3,7 +3,7 @@ import spacexService from "../services/spacex";
 
 export const useData = () => {
   const [data, setData] = useState([]);
-  const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState(true);
 
   const onFetch = useCallback(async (endpoint) => {
     try {
