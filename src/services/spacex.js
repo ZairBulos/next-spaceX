@@ -11,8 +11,20 @@ async function getData(endpoint) {
   return data;
 }
 
+async function getItem(endpoint, id) {
+  const res = await fetch(`${API_URL}/${endpoint}/${id}`);
+
+  if (!res.ok) {
+    throw new Error("Failed to fetch data");
+  }
+
+  const data = await res.json();
+  return data;
+}
+
 const spacexService = {
-  getData
+  getData,
+  getItem
 };
 
 export default spacexService;
