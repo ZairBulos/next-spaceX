@@ -1,7 +1,6 @@
 import React from "react";
 import { format } from "date-fns";
 import { Button, Image, Link } from "@nextui-org/react";
-
 import Article from "@/assets/article";
 import BrandYouTube from "@/assets/brand-youtube";
 import BrandWikipedia from "@/assets/brand-wikipedia";
@@ -22,7 +21,7 @@ function LauncheItem({ launche }) {
   const getStatusColor = (success) => statusColors[success];
 
   return (
-    <div className="grid grid-cols-1 lg:grid-cols-12">
+    <article className="grid grid-cols-1 lg:grid-cols-12 lg:py-10">
       <div className="lg:col-span-6 mx-auto mb-4 lg:mb-0">
         <Image
           src={launche.links.patch.large}
@@ -31,24 +30,28 @@ function LauncheItem({ launche }) {
         />
       </div>
       <div className="lg:col-span-6">
-        <h1 className="text-4xl font-bold mb-4">{launche.name}</h1>
-        <p className="lg:text-lg mb-2 text-gray-300">
+        <h1 className="text-2xl lg:text-4xl font-bold mb-2">{launche.name}</h1>
+        <h2 className="text-lg lg:text-xl mb-4 text-gray-300">
           {formatDate(launche.date_local)},
           <span className={`${getStatusColor(launche.success)} ms-1`}>
             {launche.success ? "Successful" : "Failed"}
           </span>
-        </p>
-        <p className="lg:text-lg mb-2 text-gray-300">
-          {launche.details}
-        </p>
-        <p className="lg:text-lg mb-2">
+        </h2>
+        <p className="mb-2">
           <b className="mr-1">Fairings:</b>
-          <span className="text-gray-300">{launche.fairings.reused ? "Reused" : "Not Reused"}</span>
+          <span className="text-gray-300">
+            {launche.fairings.reused ? "Reused" : "Not Reused"}
+          </span>
         </p>
-        <p className="lg:text-lg mb-4">
+        <p className="mb-2">
           <b className="mr-1">Recovered:</b>
-          <span className="text-gray-300">{launche.fairings.recovered ? "Fairings Recovered" : "Fairings Not Recovered"}</span>
+          <span className="text-gray-300">
+            {launche.fairings.recovered
+              ? "Fairings Recovered"
+              : "Fairings Not Recovered"}
+          </span>
         </p>
+        <p className="mb-4 text-gray-300">{launche.details}</p>
         <div className="flex gap-4">
           <Button
             as={Link}
@@ -82,7 +85,7 @@ function LauncheItem({ launche }) {
           </Button>
         </div>
       </div>
-    </div>
+    </article>
   );
 }
 
