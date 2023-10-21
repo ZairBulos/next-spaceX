@@ -21,11 +21,9 @@ function RocketItem({ rocket }) {
   const getStatusColor = (success) => statusColors[success];
 
   return (
-    <article className="grid grid-cols-1 lg:grid-cols-12 lg:py-10">
+    <article className="grid grid-cols-1 lg:grid-cols-12 lg:py-10 lg:gap-8">
       <div className="lg:col-span-6">
-        <h1 className="text-2xl lg:text-4xl font-bold mb-2">
-          {rocket.name}
-        </h1>
+        <h1 className="text-2xl lg:text-4xl font-bold mb-2">{rocket.name}</h1>
         <h2 className="text-lg lg:text-xl mb-4 text-gray-300">
           First Flight: {formatDate(rocket.first_flight)}
         </h2>
@@ -90,7 +88,7 @@ function RocketItem({ rocket }) {
             </p>
           </div>
         </div>
-        <p className="mb-4 text-sm lg:text-base lg:mr-4 text-gray-300">
+        <p className="mb-4 text-sm lg:text-base text-gray-300">
           {rocket.description}
         </p>
         <div className="flex gap-4">
@@ -112,7 +110,7 @@ function RocketItem({ rocket }) {
         <Image
           src={rocket.flickr_images[mainImg]}
           alt={rocket.name}
-          className="h-72 lg:h-96 w-full object-cover"
+          className="h-[60vh] w-[100vh] object-cover"
         />
 
         <ul className="flex flex-wrap items-center justify-start gap-4 mt-2">
