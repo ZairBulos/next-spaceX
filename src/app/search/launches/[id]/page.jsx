@@ -2,9 +2,9 @@
 import React, { useEffect } from "react";
 import { useItem } from "@/hooks/useItem";
 import Loader from "@/components/Loader";
-import LauncheItem from "@/components/Item/LauncheItem";
+import LaunchItem from "@/components/Item/LaunchItem";
 
-function Launche({ params }) {
+function Launch({ params }) {
   const { data, loading, onFetch } = useItem();
 
   useEffect(() => {
@@ -14,10 +14,10 @@ function Launche({ params }) {
   return (
     <main>
       <section className="container mx-auto p-10">
-        {loading ? <Loader /> : <LauncheItem launche={data} />}
+        {loading ? <Loader /> : <LaunchItem launch={data} />}
       </section>
     </main>
   );
 }
 
-export default Launche;
+export default Launch;
