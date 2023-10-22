@@ -1,10 +1,11 @@
 "use client";
+import Head from "next/head";
 import React, { useEffect } from "react";
 import { useItem } from "@/hooks/useItem";
 import Loader from "@/components/Loader";
 import RocketItem from "@/components/Item/RocketItem";
 
-function Rocket({ params }) {
+export default function Rocket({ params }) {
   const { data, loading, onFetch } = useItem();
 
   useEffect(() => {
@@ -12,12 +13,15 @@ function Rocket({ params }) {
   }, [params.id]);
 
   return (
-    <main>
-      <section className="container mx-auto p-10">
-        {loading ? <Loader /> : <RocketItem rocket={data} />}
-      </section>
-    </main>
+    <>
+      <Head>
+        <title>Next SpaceX - Rocket</title>
+      </Head>
+      <main>
+        <section className="container mx-auto p-10">
+          {loading ? <Loader /> : <RocketItem rocket={data} />}
+        </section>
+      </main>
+    </>
   );
 }
-
-export default Rocket;

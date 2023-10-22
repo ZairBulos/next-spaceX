@@ -60,7 +60,7 @@ function Header() {
           <NavbarItem className="hidden lg:flex" key={item.label}>
             <Link
               href={item.href}
-              className="text-sm uppercase font-semibold hover:underline underline-offset-8 decoration-sky-400"
+              className="uppercase text-sm font-medium hover:underline hover:underline-offset-4 hover:decoration-sky-400"
             >
               {item.label}
             </Link>

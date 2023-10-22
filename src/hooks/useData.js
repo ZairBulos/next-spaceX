@@ -1,5 +1,5 @@
 import { useCallback, useState } from "react";
-import spacexService from "../services/spacex";
+import spacexService from "../lib/spacex";
 
 export const useData = () => {
   const [data, setData] = useState([]);

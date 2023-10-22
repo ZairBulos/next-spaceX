@@ -1,4 +1,4 @@
-import { API_URL } from "../lib/constants";
+import { API_URL } from "./constants";
 
 async function getData(endpoint) {
   const res = await fetch(`${API_URL}/${endpoint}`);

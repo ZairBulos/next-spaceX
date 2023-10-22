@@ -71,7 +71,7 @@ function Footer() {
                     rel="noreferrer"
                     className="hover:underline "
                   >
-                    Github
+                    GitHub
                   </a>
                 </li>
                 <li>
@@ -93,7 +93,7 @@ function Footer() {
               <ul className="text-gray-400 font-medium">
                 <li className="mb-4">
                   <a
-                    href="https://github.com/ZairBulos/spaceX"
+                    href="https://github.com/ZairBulos/next-spaceX"
                     target="_blank"
                     rel="noreferrer"
                     className="hover:underline"
@@ -116,9 +116,9 @@ function Footer() {
           </div>
         </div>
         <hr className="my-6 sm:mx-auto border-gray-700 lg:my-8" />
-        <div className="sm:flex sm:items-center sm:justify-between">
-          <span className="text-sm sm:text-center text-gray-400">
-            © 2023 Zair Bulos. All Rights Reserved.
+        <div className="sm:flex sm:items-center sm:justify-center">
+          <span className="flex text-sm sm:text-center text-gray-400">
+            Made with <span className="text-red-500">❤</span> by Zair Bulos
           </span>
         </div>
       </div>
