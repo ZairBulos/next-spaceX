@@ -31,7 +31,7 @@ cd next-spaceX
 To install the necessary dependencies, run the following command:
 
 ```bash
-pnm install
+npm install
 ```
 
 ## Usage
@@ -46,8 +46,8 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 
 ## Deployment
 
-You can see the application live at: [Next SpaceX]()
+You can see the application live at: [Next SpaceX](https://next-spacex-lilac.vercel.app/)
 
 ## License
 
-This project is Licensed under the [MIT](./LICENSE) License.
+This project is Licensed under the [MIT License](./LICENSE).
