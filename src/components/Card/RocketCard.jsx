@@ -10,6 +10,7 @@ function RocketCard({ rocket }) {
         <Image
           src={rocket.flickr_images[1]}
           alt={rocket.name}
+          title={`Rocket ${rocket.name}`}
           className="h-64 lg:h-80 w-[600px] object-cover rounded-none"
         />
         <CardFooter class="p-4">

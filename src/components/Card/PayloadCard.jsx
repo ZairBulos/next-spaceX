@@ -11,28 +11,24 @@ function PayloadCard({ payload }) {
             {payload.name},
             <span className="text-lg text-white/80 ms-1">{payload.type}</span>
           </h2>
-          <p className="text-sm mb-1">
-            <b className="mr-1">Orbit:</b>
-            <span className="text-gray-300">{payload.orbit}</span>
-          </p>
-          <p className="text-sm mb-1">
-            <b className="mr-1">Customers:</b>
-            <span className="text-gray-300">
-              {payload.customers.join(", ")}
-            </span>
-          </p>
-          <p className="text-sm mb-1">
-            <b className="mr-1">Manufacturers:</b>
-            <span className="text-gray-300">
-              {payload.manufacturers.join(", ")}
-            </span>
-          </p>
-          <p className="text-sm">
-            <b className="mr-1">Nationalities:</b>
-            <span className="text-gray-300">
-              {payload.nationalities.join(", ")}
-            </span>
-          </p>
+          <ul className="text-sm text-gray-300">
+            <li>
+              <strong>Orbit:</strong>
+              <span className="ms-1">{payload.orbit}</span>
+            </li>
+            <li>
+              <strong>Customers:</strong>
+              <span className="ms-1">{payload.customers.join(", ")}</span>
+            </li>
+            <li>
+              <strong>Manufacturers:</strong>
+              <span className="ms-1">{payload.manufacturers.join(", ")}</span>
+            </li>
+            <li>
+              <strong>Nationalities:</strong>
+              <span className="ms-1">{payload.nationalities.join(", ")}</span>
+            </li>
+          </ul>
         </CardBody>
       </Card>
     </MotionCard>

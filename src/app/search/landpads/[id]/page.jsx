@@ -1,5 +1,4 @@
 "use client";
-import Head from "next/head";
 import React, { useEffect } from "react";
 import { useItem } from "@/hooks/useItem";
 import Loader from "@/components/Loader";
@@ -13,15 +12,10 @@ export default function Landpad({ params }) {
   }, [params.id]);
 
   return (
-    <>
-      <Head>
-        <title>Next SpaceX - Landpad</title>
-      </Head>
-      <main>
-        <section className="container mx-auto p-10">
-          {loading ? <Loader /> : <LandpadItem landpad={data} />}
-        </section>
-      </main>
-    </>
+    <main>
+      <section className="container mx-auto p-10">
+        {loading ? <Loader /> : <LandpadItem landpad={data} />}
+      </section>
+    </main>
   );
 }

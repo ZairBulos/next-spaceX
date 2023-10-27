@@ -13,12 +13,12 @@ function About() {
         </h2>
 
         {/* Section: About */}
-        <section className="grid grid-cols-1 lg:grid-cols-12 py-8 border-b border-gray-500">
-          <div className="lg:col-span-6 flex items-center justify-center lg:justify-start">
+        <article className="grid grid-cols-1 lg:grid-cols-12 py-8 border-b border-gray-500">
+          <header className="lg:col-span-6 flex items-center justify-center lg:justify-start">
             <h3 className="text-xl lg:text-2xl font-semibold text-transparent bg-clip-text bg-gradient-to-r from-sky-400 to-purple-400">
               About
             </h3>
-          </div>
+          </header>
           <div className="lg:col-span-6">
             <p className="lg:text-lg text-justify">
               SpaceX designs, manufactures and launches advanced rockets and
@@ -27,38 +27,38 @@ function About() {
               other planets.
             </p>
           </div>
-        </section>
+        </article>
 
         {/* Section: Information */}
-        <section className="grid grid-cols-1 lg:grid-cols-12 py-8 border-b border-gray-500">
-          <div className="lg:col-span-6 flex items-center justify-center lg:justify-start">
+        <article className="grid grid-cols-1 lg:grid-cols-12 py-8 border-b border-gray-500">
+          <header className="lg:col-span-6 flex items-center justify-center lg:justify-start">
             <h3 className="text-xl lg:text-2xl font-semibold text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-sky-400">
               Information
             </h3>
-          </div>
+          </header>
           <div className="lg:col-span-6">
             <ul className="lg:text-lg">
               <li>3 test sites</li>
               <li>4 launch sites</li>
               <li>4 space vehicles</li>
-              <li>Has 9500 employees</li>
+              <li>Has 9.500 employees</li>
               <li>Valued at 74.000.000.000 USD</li>
               <li>Located in Rocket Road, Hawthorne, California</li>
             </ul>
           </div>
-        </section>
+        </article>
 
         {/* Section: Social Media */}
-        <section className="grid grid-cols-1 lg:grid-cols-12 py-8">
-          <div className="lg:col-span-6 flex items-center justify-center lg:justify-start">
+        <article className="grid grid-cols-1 lg:grid-cols-12 py-8">
+          <header className="lg:col-span-6 flex items-center justify-center lg:justify-start">
             <h3 className="text-xl lg:text-2xl font-semibold text-transparent bg-clip-text bg-gradient-to-r from-sky-400 to-purple-400">
               Social Media
             </h3>
-          </div>
+          </header>
           <div className="lg:col-span-6">
             <ul className="lg:text-lg">
               <li className="flex items-center gap-2">
-                <BrandFlickr />{" "}
+                <BrandFlickr />
                 <a
                   href="https://www.flickr.com/photos/spacex/"
                   target="_blank"
@@ -103,7 +103,7 @@ function About() {
               </li>
             </ul>
           </div>
-        </section>
+        </article>
       </div>
     </section>
   );

@@ -10,6 +10,7 @@ function LandpadCard({ landpad }) {
         <Image
           src={landpad.images.large[0]}
           alt={landpad.name}
+          title={`Landpad ${landpad.name}`}
           className="h-64 lg:h-80 w-[600px] object-cover rounded-none"
         />
         <CardFooter class="p-4">
@@ -17,7 +18,7 @@ function LandpadCard({ landpad }) {
           <p className="text-sm text-gray-300 mb-4">
             {landpad.details.substring(0, 100)}...
           </p>
-          <Button 
+          <Button
             as={Link}
             href={`/search/landpads/${landpad.id}`}
             variant="ghost"

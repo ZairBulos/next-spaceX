@@ -4,9 +4,9 @@
 
 <p align="center">
   <a href="https://nodejs.org/" target="_blank"><img src="https://img.shields.io/badge/NODE-v18.18.2-green?logo=node.js&style=for-the-badge" alt="node.js" /></a>
-  <a href="https://react.dev/" target="_blank"><img src="https://img.shields.io/badge/REACT-V.18-gray?logo=react&style=for-the-badge" alt="react" /></a>
+  <a href="https://react.dev/" target="_blank"><img src="https://img.shields.io/badge/REACT-v18-gray?logo=react&style=for-the-badge" alt="react" /></a>
   <a href="https://nextjs.org/" target="_blank"><img src="https://img.shields.io/badge/NEXT.JS-v13.5.4-black?logo=next.js&style=for-the-badge" alt="next.js" /></a>
-  <a href="https://tailwindcss.com/" target="_blank"><img src="https://img.shields.io/badge/TAILWIND%20CSS-v.3-blue?logo=tailwindcss&style=for-the-badge" alt="tailwindcss" /></a>
+  <a href="https://tailwindcss.com/" target="_blank"><img src="https://img.shields.io/badge/TAILWIND%20CSS-v3-blue?logo=tailwindcss&style=for-the-badge" alt="tailwindcss" /></a>
   <a href="https://github.com/r-spacex/SpaceX-API" target="_blank"><img src="https://img.shields.io/badge/SPACEX%20API-v4-white?logo=spacex&style=for-the-badge" alt="spacex" /></a>
 </p>
 

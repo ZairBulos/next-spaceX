@@ -10,6 +10,7 @@ function DragonCard({ dragon }) {
         <Image
           src={dragon.flickr_images[2]}
           alt={dragon.name}
+          title={dragon.name}
           className="h-64 lg:h-80 w-[600px] object-cover rounded-none"
         />
         <CardFooter class="p-4">

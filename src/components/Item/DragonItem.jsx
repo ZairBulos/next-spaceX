@@ -24,125 +24,147 @@ function DragonItem({ dragon }) {
     <article className="grid grid-cols-1 lg:grid-cols-12 lg:py-10 lg:gap-8">
       <div className="lg:col-span-6">
         <h1 className="text-2xl lg:text-4xl font-bold mb-2">{dragon.name}</h1>
-        <h2 className="text-lg lg:text-xl mb-4 text-gray-300">
-          First Flight: {formatDate(dragon.first_flight)}
+        <h2 className="text-lg lg:text-xl text-gray-300 mb-4">
+          <strong>First Flight:</strong> {formatDate(dragon.first_flight)}
         </h2>
-        <div className="grid grid-cols-2">
-          <div className="col-span-1">
-            <p className="mb-2 text-sm lg:text-base">
-              <b className="mr-1">Status:</b>
-              <span className={getStatusColor(dragon.active)}>
-                {dragon.active ? "Active" : "Inactive"}
-              </span>
-            </p>
-            <p className="mb-2 text-sm lg:text-base">
-              <b className="mr-1">Type:</b>
-              <span className="capitalize text-gray-300">{dragon.type}</span>
-            </p>
-            <p className="mb-2 text-sm lg:text-base">
-              <b className="mr-1">Crew Capacity:</b>
-              <span className="text-gray-300">{dragon.crew_capacity}</span>
-            </p>
-            <p className="mb-4 text-sm lg:text-base">
-              <b className="mr-1">Orbit Duration:</b>
-              <span className="text-gray-300">
-                {dragon.orbit_duration_yr} years
-              </span>
-            </p>
+
+        {/* First Column: Information */}
+        <div className="grid grid-cols-1 lg:grid-cols-2">
+          <div className="col-span-1 mb-2">
+            <ul className="text-sm lg:text-base text-gray-300">
+              <li>
+                <strong>Status:</strong>
+                <span className={`ms-1 ${getStatusColor(dragon.active)}`}>
+                  {dragon.active ? "Active" : "Inactive"}
+                </span>
+              </li>
+              <li>
+                <strong>Type:</strong>
+                <span className="ms-1 capitalize">{dragon.type}</span>
+              </li>
+              <li>
+                <strong>Crew Capacity:</strong>
+                <span className="ms-1">{dragon.crew_capacity}</span>
+              </li>
+              <li>
+                <strong>Orbit Duration:</strong>
+                <span className="ms-1">{dragon.orbit_duration_yr} years</span>
+              </li>
+            </ul>
           </div>
-          <div className="col-span-1">
-            <div className="bg-gray-800 p-4 mb-4 rounded-lg">
-              <h3 className="lg:text-lg font-bold uppercase">Heat Shield</h3>
-              <p className="text-sm lg:text-base text-gray-300">
-                Size: {dragon.heat_shield.size_meters} m
-              </p>
-              <p className="text-sm lg:text-base text-gray-300">
-                Material: {dragon.heat_shield.material}
-              </p>
-              <p className="text-sm lg:text-base text-gray-300">
-                Temperature: {dragon.heat_shield.temp_degrees}
-              </p>
-              <p className="text-sm lg:text-base text-gray-300">
-                Dev Partner: {dragon.heat_shield.dev_partner}
-              </p>
-            </div>
+
+          <div className="col-span-1 mb-2">
+            <aside className="bg-gray-900 p-2 lg:p-4 rounded-md">
+              <h3 className="lg:text-lg font-bold">Heat Shield</h3>
+              <ul className="text-sm lg:text-base text-gray-300">
+                <li>
+                  <strong>Size:</strong>
+                  <span className="ms-1">
+                    {dragon.heat_shield.size_meters} m
+                  </span>
+                </li>
+                <li>
+                  <strong>Material:</strong>
+                  <span className="ms-1">{dragon.heat_shield.material}</span>
+                </li>
+                <li>
+                  <strong>Temperature:</strong>
+                  <span className="ms-1">
+                    {dragon.heat_shield.temp_degrees} degrees
+                  </span>
+                </li>
+                <li>
+                  <strong>Dev Partner:</strong>
+                  <span className="ms-1">{dragon.heat_shield.dev_partner}</span>
+                </li>
+              </ul>
+            </aside>
           </div>
-          <div className="lg:col-span-1">
-            <p className="mb-2 text-sm lg:text-base">
-              <b className="mr-1">Launch Payload Mass:</b>
-              <span className="text-gray-300">
-                {imperial ? (
-                  <>{dragon.launch_payload_mass.lb} lb</>
-                ) : (
-                  <>{dragon.launch_payload_mass.kg} kg</>
-                )}
-              </span>
-            </p>
-            <p className="mb-2 text-sm lg:text-base">
-              <b className="mr-1">Return Payload Mass:</b>
-              <span className="text-gray-300">
-                {imperial ? (
-                  <>{dragon.return_payload_mass.lb} lb</>
-                ) : (
-                  <>{dragon.return_payload_mass.kg} kg</>
-                )}
-              </span>
-            </p>
-            <p className="mb-4 text-sm lg:text-base">
-              <b className="mr-1">Height With Trunk:</b>
-              <span className="text-gray-300">
-                {imperial ? (
-                  <>{dragon.height_w_trunk.feet} ft</>
-                ) : (
-                  <>{dragon.height_w_trunk.meters} m</>
-                )}
-              </span>
-            </p>
+
+          <div className="lg:col-span-1 mb-2">
+            <ul className="text-sm lg:text-base text-gray-300">
+              <li>
+                <strong>Launch Payload Mass:</strong>
+                <span className="ms-1">
+                  {imperial ? (
+                    <>{dragon.launch_payload_mass.lb} lb</>
+                  ) : (
+                    <>{dragon.launch_payload_mass.kg} kg</>
+                  )}
+                </span>
+              </li>
+              <li>
+                <strong>Return Payload Mass:</strong>
+                <span className="ms-1">
+                  {imperial ? (
+                    <>{dragon.return_payload_mass.lb} lb</>
+                  ) : (
+                    <>{dragon.return_payload_mass.kg} kg</>
+                  )}
+                </span>
+              </li>
+              <li>
+                <strong>Height With Trunk:</strong>
+                <span className="ms-1">
+                  {imperial ? (
+                    <>{dragon.height_w_trunk.feet} ft</>
+                  ) : (
+                    <>{dragon.height_w_trunk.meters} m</>
+                  )}
+                </span>
+              </li>
+            </ul>
           </div>
 
           <div className="lg:col-span-1">
-            <p className="mb-2 text-sm lg:text-base">
-              <b className="mr-1">Launch Payload Vol:</b>
-              <span className="text-gray-300">
-                {imperial ? (
-                  <>
-                    {dragon.launch_payload_vol.cubic_feet} ft<sup>3</sup>
-                  </>
-                ) : (
-                  <>
-                    {dragon.launch_payload_vol.cubic_meters} m<sup>3</sup>
-                  </>
-                )}
-              </span>
-            </p>
-            <p className="mb-2 text-sm lg:text-base">
-              <b className="mr-1">Return Payload Mass:</b>
-              <span className="text-gray-300">
-                {imperial ? (
-                  <>
-                    {dragon.return_payload_vol.cubic_feet} ft<sup>3</sup>
-                  </>
-                ) : (
-                  <>
-                    {dragon.return_payload_vol.cubic_meters} m<sup>3</sup>
-                  </>
-                )}
-              </span>
-            </p>
-            <p className="mb-4 text-sm lg:text-base">
-              <b className="mr-1">Diameter:</b>
-              <span className="text-gray-300">
-                {imperial ? (
-                  <>{dragon.diameter.feet} ft</>
-                ) : (
-                  <>{dragon.diameter.meters} m</>
-                )}
-              </span>
-            </p>
+            <ul className="text-sm lg:text-base text-gray-300">
+              <li>
+                <strong>Launch Payload Vol:</strong>
+                <span className="ms-1">
+                  {imperial ? (
+                    <>
+                      {dragon.launch_payload_vol.cubic_feet} ft<sup>3</sup>
+                    </>
+                  ) : (
+                    <>
+                      {dragon.launch_payload_vol.cubic_meters} m<sup>3</sup>
+                    </>
+                  )}
+                </span>
+              </li>
+              <li>
+                <strong>Return Payload Mass:</strong>
+                <span className="ms-1">
+                  {imperial ? (
+                    <>
+                      {dragon.return_payload_vol.cubic_feet} ft<sup>3</sup>
+                    </>
+                  ) : (
+                    <>
+                      {dragon.return_payload_vol.cubic_meters} m<sup>3</sup>
+                    </>
+                  )}
+                </span>
+              </li>
+              <li>
+                <strong>Diameter:</strong>
+                <span className="ms-1">
+                  {imperial ? (
+                    <>{dragon.diameter.feet} ft</>
+                  ) : (
+                    <>{dragon.diameter.meters} m</>
+                  )}
+                </span>
+              </li>
+            </ul>
           </div>
         </div>
-        <p className="mb-4 text-sm lg:text-base">{dragon.description}</p>
-        <div className="flex gap-4">
+
+        <p className="text-sm lg:text-base text-gray-300 mt-4">
+          {dragon.description}
+        </p>
+
+        <div className="flex gap-4 mt-4">
           <Button
             as={Link}
             variant="ghost"
@@ -157,6 +179,8 @@ function DragonItem({ dragon }) {
           </Button>
         </div>
       </div>
+
+      {/* Second Column: Image */}
       <div className="lg:col-span-6 lg:mt-0 mt-4">
         <Image
           src={dragon.flickr_images[mainImg]}
@@ -174,7 +198,7 @@ function DragonItem({ dragon }) {
               <Image
                 src={img}
                 alt={dragon.name}
-                className={`h-16 ${
+                className={`h-16 w-16 ${
                   idx === mainImg ? "border-2 border-white" : ""
                 }`}
               />

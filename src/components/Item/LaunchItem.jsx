@@ -22,6 +22,7 @@ function LaunchItem({ launch }) {
 
   return (
     <article className="grid grid-cols-1 lg:grid-cols-12 lg:py-10">
+      {/* First Column: Image */}
       <div className="lg:col-span-6 mx-auto mb-4 lg:mb-0">
         <Image
           src={launch.links.patch.large}
@@ -29,30 +30,37 @@ function LaunchItem({ launch }) {
           className="h-[50vh] w-full"
         />
       </div>
+
+      {/* Second Column: Information */}
       <div className="lg:col-span-6">
         <h1 className="text-2xl lg:text-4xl font-bold mb-2">{launch.name}</h1>
-        <h2 className="text-lg lg:text-xl mb-4 text-gray-300">
+        <h2 className="text-lg lg:text-xl text-gray-300 mb-4">
           {formatDate(launch.date_local)},
           <span className={`${getStatusColor(launch.success)} ms-1`}>
             {launch.success ? "Successful" : "Failed"}
           </span>
         </h2>
-        <p className="mb-2">
-          <b className="mr-1">Fairings:</b>
-          <span className="text-gray-300">
-            {launch.fairings.reused ? "Reused" : "Not Reused"}
-          </span>
-        </p>
-        <p className="mb-2">
-          <b className="mr-1">Recovered:</b>
-          <span className="text-gray-300">
-            {launch.fairings.recovered
-              ? "Fairings Recovered"
-              : "Fairings Not Recovered"}
-          </span>
-        </p>
-        <p className="mb-4 text-gray-300">{launch.details}</p>
-        <div className="flex gap-4">
+
+        <ul className="text-gray-300">
+          <li>
+            <strong>Fairings:</strong>
+            <span className="ms-1">
+              {launch.fairings.reused ? "Reused" : "Not Reused"}
+            </span>
+          </li>
+          <li>
+            <strong>Recovered:</strong>
+            <span className="ms-1">
+              {launch.fairings.recovered
+                ? "Fairings Recovered"
+                : "Fairings Not Recovered"}
+            </span>
+          </li>
+        </ul>
+
+        <p className="text-gray-300 mt-4">{launch.details}</p>
+
+        <div className="flex gap-4 mt-4">
           <Button
             as={Link}
             variant="ghost"

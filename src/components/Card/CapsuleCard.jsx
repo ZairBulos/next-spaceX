@@ -16,34 +16,36 @@ function CapsuleCard({ capsule }) {
     <MotionCard>
       <Card className="h-64">
         <CardBody>
-          <h2 className="text-xl font-semibold leading-loose">
+          <h2 className="text-lg lg:text-xl font-semibold mb-2">
             {capsule.type},
-            <span className="text-lg text-white/80 ms-1">{capsule.serial}</span>
+            <span className="lg:text-lg text-white/80 ms-1">
+              {capsule.serial}
+            </span>
           </h2>
-          <p className="text-sm">
-            <b className="mr-1 mb-1">Status:</b>
-            <span className={`${getStatusColor(capsule.status)} capitalize`}>
-              {capsule.status}
-            </span>
-          </p>
-          <p className="text-sm mb-1">
-            <b className="mr-1">Launches:</b>
-            <span className="text-gray-300">{capsule.launches.length}</span>
-          </p>
-          <p className="text-sm mb-1">
-            <b className="mr-1">Water landings:</b>
-            <span className="text-gray-300">{capsule.water_landings}</span>
-          </p>
-          <p className="text-sm mb-1">
-            <b className="mr-1">Land landings:</b>
-            <span className="text-gray-300">{capsule.land_landings}</span>
-          </p>
-          <p className="text-sm">
-            <b className="mr-1">Last update:</b>
-            <span className="text-gray-300 text-justify">
-              {capsule.last_update}
-            </span>
-          </p>
+          <ul className="text-sm text-gray-300">
+            <li>
+              <strong>Status:</strong>
+              <span className={`ms-1 capitalize ${getStatusColor(capsule.status)}`}>
+                {capsule.status}
+              </span>
+            </li>
+            <li>
+              <strong>Launches:</strong>
+              <span className="ms-1">{capsule.launches.length}</span>
+            </li>
+            <li>
+              <strong>Land landings:</strong>
+              <span className="ms-1">{capsule.land_landings}</span>
+            </li>
+            <li>
+              <strong>Water landings:</strong>
+              <span className="ms-1">{capsule.water_landings}</span>
+            </li>
+            <li>
+              <strong>Last update:</strong>
+              <span className="ms-1">{capsule.last_update}</span>
+            </li>
+          </ul>
         </CardBody>
       </Card>
     </MotionCard>

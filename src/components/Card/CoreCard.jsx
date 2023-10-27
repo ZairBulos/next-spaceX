@@ -16,19 +16,27 @@ function CoreCard({ core }) {
     <MotionCard>
       <Card className="h-64">
         <CardBody>
-          <h2 className="text-xl font-semibold leading-loose">{core.serial}</h2>
-          <p className="text-sm mb-1">
-            <b className="mr-1">Status:</b>
-            <span className={`${getStatusColor(core.status)} capitalize`}>{core.status}</span>
-          </p>
-          <p className="text-sm mb-1">
-            <b className="mr-1">Launches:</b>
-            <span className="text-gray-300">{core.launches.length}</span>
-          </p>
-          <p className="text-sm mb-1">
-            <b className="mr-1">Last Update:</b>
-            <span className="text-gray-300 text-justify">{core.last_update ? core.last_update : "Not Available"}</span>
-          </p>
+          <h2 className="text-lg lg:text-xl font-semibold mb-2">
+            {core.serial}
+          </h2>
+          <ul className="text-sm text-gray-300">
+            <li>
+              <strong>Status:</strong>
+              <span className={`ms-1 capitalize ${getStatusColor(core.status)}`}>
+                {core.status}
+              </span>
+            </li>
+            <li>
+              <strong>Launches:</strong>
+              <span className="ms-1">{core.launches.length}</span>
+            </li>
+            <li>
+              <strong>Last Update:</strong>
+              <span className="ms-1">
+                {core.last_update ? core.last_update : "Not Available"}
+              </span>
+            </li>
+          </ul>
         </CardBody>
       </Card>
     </MotionCard>

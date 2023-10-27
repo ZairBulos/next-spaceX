@@ -22,76 +22,86 @@ function RocketItem({ rocket }) {
 
   return (
     <article className="grid grid-cols-1 lg:grid-cols-12 lg:py-10 lg:gap-8">
+      {/* First Colum: Information */}
       <div className="lg:col-span-6">
         <h1 className="text-2xl lg:text-4xl font-bold mb-2">{rocket.name}</h1>
-        <h2 className="text-lg lg:text-xl mb-4 text-gray-300">
-          First Flight: {formatDate(rocket.first_flight)}
+        <h2 className="text-lg lg:text-xl text-gray-300 mb-4">
+          <strong>First Flight:</strong> {formatDate(rocket.first_flight)}
         </h2>
+
         <div className="grid grid-cols-1 lg:grid-cols-2">
           <div className="lg:col-span-1">
-            <p className="mb-2 text-sm lg:text-base">
-              <b className="mr-1">Status:</b>
-              <span className={getStatusColor(rocket.active)}>
-                {rocket.active ? "Active" : "Inactive"}
-              </span>
-            </p>
-            <p className="mb-2 text-sm lg:text-base">
-              <b className="mr-1">Success Rate:</b>
-              <span className="text-gray-300">{rocket.success_rate_pct}%</span>
-            </p>
-            <p className="mb-2 text-sm lg:text-base">
-              <b className="mr-1">Country:</b>
-              <span className="text-gray-300">{rocket.country}</span>
-            </p>
-            <p className="mb-4 text-sm lg:text-base">
-              <b className="mr-1">Cost per launch:</b>
-              <span className="text-gray-300">
-                {rocket.cost_per_launch.toLocaleString()} USD
-              </span>
-            </p>
+            <ul className="text-sm lg:text-base text-gray-300">
+              <li>
+                <strong>Status:</strong>
+                <span
+                  className={`ms-1 selection:${getStatusColor(rocket.active)}`}
+                >
+                  {rocket.active ? "Active" : "Inactive"}
+                </span>
+              </li>
+              <li>
+                <strong>Success Rate:</strong>
+                <span className="ms-1">{rocket.success_rate_pct}%</span>
+              </li>
+              <li>
+                <strong>Country:</strong>
+                <span className="ms-1">{rocket.country}</span>
+              </li>
+              <li>
+                <strong>Cost per launch:</strong>
+                <span className="ms-1">
+                  {rocket.cost_per_launch.toLocaleString()} USD
+                </span>
+              </li>
+            </ul>
           </div>
 
           <div className="lg:col-span-1">
-            <p className="mb-2 text-sm lg:text-base">
-              <b className="mr-1">Stages:</b>
-              <span className="text-gray-300">{rocket.stages}</span>
-            </p>
-            <p className="mb-2 text-sm lg:text-base">
-              <b className="mr-1">Height:</b>
-              <span className="text-gray-300">
-                {imperial ? (
-                  <>{rocket.height.feet} ft</>
-                ) : (
-                  <>{rocket.height.meters} m</>
-                )}
-              </span>
-            </p>
-            <p className="mb-2 text-sm lg:text-base">
-              <b className="mr-1">Diameter:</b>
-              <span className="text-gray-300">
-                {imperial ? (
-                  <>{rocket.diameter.feet} ft</>
-                ) : (
-                  <>{rocket.diameter.meters} m</>
-                )}
-              </span>
-            </p>
-            <p className="mb-4 text-sm lg:text-base">
-              <b className="mr-1">Mass:</b>
-              <span className="text-gray-300">
-                {imperial ? (
-                  <>{rocket.mass.lb.toLocaleString()} lb</>
-                ) : (
-                  <>{rocket.mass.kg.toLocaleString()} kg</>
-                )}
-              </span>
-            </p>
+            <ul className="text-sm lg:text-base text-gray-300">
+              <li>
+                <strong>Stages:</strong>
+                <span className="ms-1">{rocket.stages}</span>
+              </li>
+              <li>
+                <strong>Height:</strong>
+                <span className="ms-1">
+                  {imperial ? (
+                    <>{rocket.height.feet} ft</>
+                  ) : (
+                    <>{rocket.height.meters} m</>
+                  )}
+                </span>
+              </li>
+              <li>
+                <strong>Diameter:</strong>
+                <span className="ms-1">
+                  {imperial ? (
+                    <>{rocket.diameter.feet} ft</>
+                  ) : (
+                    <>{rocket.diameter.meters} m</>
+                  )}
+                </span>
+              </li>
+              <li>
+                <strong>Mass:</strong>
+                <span className="ms-1">
+                  {imperial ? (
+                    <>{rocket.mass.lb.toLocaleString()} lb</>
+                  ) : (
+                    <>{rocket.mass.kg.toLocaleString()} kg</>
+                  )}
+                </span>
+              </li>
+            </ul>
           </div>
         </div>
-        <p className="mb-4 text-sm lg:text-base text-gray-300">
+
+        <p className="text-sm lg:text-base text-gray-300 mt-4">
           {rocket.description}
         </p>
-        <div className="flex gap-4">
+
+        <div className="flex gap-4 mt-4">
           <Button
             as={Link}
             variant="ghost"
@@ -106,6 +116,8 @@ function RocketItem({ rocket }) {
           </Button>
         </div>
       </div>
+
+      {/* Second Colum: Image */}
       <div className="lg:col-span-6 lg:mt-0 mt-4">
         <Image
           src={rocket.flickr_images[mainImg]}

@@ -6,9 +6,16 @@ function CrewCard({ member }) {
   return (
     <MotionCard>
       <Card radius="lg" isFooterBlurred className="border-none h-72">
-        <Image src={member.image} alt={member.name} className="h-full w-full" />
+        <Image
+          src={member.image}
+          alt={member.name}
+          title={`Image of ${member.name}, member of SpaceX crew`}
+          className="h-full w-full"
+        />
         <CardFooter className="justify-between before:bg-white/10 border-white/20 border-1 overflow-hidden py-1 absolute before:rounded-xl rounded-large bottom-1 w-[calc(100%_-_8px)] shadow-small ml-1 z-10">
-          <p className="text-tiny font-semibold text-white/80">{member.name}</p>
+          <h2 className="text-tiny font-semibold text-white/80">
+            {member.name}
+          </h2>
           <Button
             as={Link}
             href={member.wikipedia}

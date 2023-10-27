@@ -10,6 +10,7 @@ function LaunchpadCard({ launchpad }) {
         <Image
           src={launchpad.images.large[0]}
           alt={launchpad.name}
+          title={`Launchpad ${launchpad.name}`}
           className="h-64 lg:h-80 w-[600px] object-cover rounded-none"
         />
         <CardFooter class="p-4">
@@ -17,7 +18,7 @@ function LaunchpadCard({ launchpad }) {
           <p className="text-sm text-gray-300 mb-4">
             {launchpad.details.substring(0, 100)}...
           </p>
-          <Button 
+          <Button
             as={Link}
             href={`/search/launchpads/${launchpad.id}`}
             variant="ghost"

@@ -31,7 +31,7 @@ function Hero() {
         >
           <Image
             src="/capsule.png"
-            alt="SpaceX Capsule"
+            alt="Capsule of SpaceX"
             className="w-full capsule"
           />
         </motion.div>
