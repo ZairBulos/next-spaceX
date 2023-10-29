@@ -1,20 +1,14 @@
-"use client";
-import React, { useEffect } from "react";
-import { useItem } from "@/hooks/useItem";
-import Loader from "@/components/Loader";
+import React from "react";
 import RocketItem from "@/components/Item/RocketItem";
+import { getItem } from "@/lib/spacex";
 
-export default function Rocket({ params }) {
-  const { data, loading, onFetch } = useItem();
-
-  useEffect(() => {
-    onFetch("rockets", params.id);
-  }, [params.id]);
+export default async function Rocket({ params }) {
+  const data = await getItem("rockets", params.id);
 
   return (
     <main>
       <section className="container mx-auto p-10">
-        {loading ? <Loader /> : <RocketItem rocket={data} />}
+        <RocketItem rocket={data} />
       </section>
     </main>
   );

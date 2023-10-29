@@ -1,20 +1,14 @@
-"use client";
-import React, { useEffect } from "react";
-import { useItem } from "@/hooks/useItem";
-import Loader from "@/components/Loader";
+import React from "react";
+import { getItem } from "@/lib/spacex";
 import DragonItem from "@/components/Item/DragonItem";
 
-export default function Dragon({ params }) {
-  const { data, loading, onFetch } = useItem();
-
-  useEffect(() => {
-    onFetch("dragons", params.id);
-  }, [params.id]);
+export default async function Dragon({ params }) {
+  const data = await getItem("dragons", params.id);
 
   return (
     <main>
       <section className="container mx-auto p-10">
-        {loading ? <Loader /> : <DragonItem dragon={data} />}
+        <DragonItem dragon={data} />
       </section>
     </main>
   );

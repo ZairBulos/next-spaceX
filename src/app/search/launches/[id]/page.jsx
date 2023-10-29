@@ -1,20 +1,14 @@
-"use client";
-import React, { useEffect } from "react";
-import { useItem } from "@/hooks/useItem";
-import Loader from "@/components/Loader";
+import React from "react";
+import { getItem } from "@/lib/spacex";
 import LaunchItem from "@/components/Item/LaunchItem";
 
-export default function Launch({ params }) {
-  const { data, loading, onFetch } = useItem();
-
-  useEffect(() => {
-    onFetch("launches", params.id);
-  }, [params.id]);
+export default async function Launch({ params }) {
+  const data = await getItem("launches", params.id);
 
   return (
     <main>
       <section className="container mx-auto p-10">
-        {loading ? <Loader /> : <LaunchItem launch={data} />}
+        <LaunchItem launch={data} />
       </section>
     </main>
   );

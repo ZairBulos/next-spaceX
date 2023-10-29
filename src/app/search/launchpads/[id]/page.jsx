@@ -1,20 +1,14 @@
-"use client";
-import React, { useEffect } from "react";
-import { useItem } from "@/hooks/useItem";
-import Loader from "@/components/Loader";
+import React from "react";
+import { getItem } from "@/lib/spacex";
 import LaunchpadItem from "@/components/Item/LaunchpadItem";
 
-export default function Landpad({ params }) {
-  const { data, loading, onFetch } = useItem();
-
-  useEffect(() => {
-    onFetch("launchpads", params.id);
-  }, [params.id]);
+export default async function Landpad({ params }) {
+  const data = await getItem("launchpads", params.id);
 
   return (
     <main>
       <section className="container mx-auto p-10">
-        {loading ? <Loader /> : <LaunchpadItem launchpad={data} />}
+        <LaunchpadItem launchpad={data} />
       </section>
     </main>
   );

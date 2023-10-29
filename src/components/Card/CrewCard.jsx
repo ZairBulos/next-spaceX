@@ -1,3 +1,4 @@
+"use client";
 import React from "react";
 import MotionCard from "./MotionCard";
 import { Card, CardFooter, Image, Button, Link } from "@nextui-org/react";
